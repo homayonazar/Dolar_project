@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import LOGO from "../assets/Logo_png.png";
 import Gold from "../assets/Gold.jpg";
+import BTC from "../assets/btc.svg";
+import USDT from "../assets/usdt.svg";
+import ETH from "../assets/eth.svg";
+import TON from "../assets/ton.svg";
 
 
 export default function Home() {
@@ -49,10 +53,10 @@ export default function Home() {
                 <div className="headerInside flex flex-row items-center w-full">
 
                     <nav className="flex flex-row-reverse gap-6 list-none w-5/6 justify-start ps-30">
-                        <li className="relative cursor-pointer hover:text-green-700">خانه</li>
-                        <li className="relative cursor-pointer hover:text-green-700">قیمت ارز</li>
-                        <li className="relative cursor-pointer hover:text-green-700">درباره ما</li>
-                        <li className="relative cursor-pointer hover:text-green-700">تماس با ما</li>
+                        <li className="relative cursor-pointer hover:text-green-700 font-['Tahoma']">خانه</li>
+                        <li className="relative cursor-pointer hover:text-green-700 font-['Tahoma']">قیمت ارز</li>
+                        <li className="relative cursor-pointer hover:text-green-700 font-['Tahoma']">درباره ما</li>
+                        <li className="relative cursor-pointer hover:text-green-700 font-['Tahoma']">تماس با ما</li>
                     </nav>
 
                     <div className="logo w-1/6 flex items-center justify-end py-2 pr-6">
@@ -66,7 +70,7 @@ export default function Home() {
             <div className="mainSection mt-10  w-[75%] rounded-2xl">
 
                 <div className="title">
-                    <p className="text-center text-2xl font-['Tahoma'] p-5"> قیمت های لحظه ای طلا و ارز</p>
+                    <p className="text-center text-2xl  p-5"> قیمت های لحظه ای طلا و ارز</p>
                 </div>
 
                 <div className="tables flex flex-row">
@@ -117,18 +121,81 @@ export default function Home() {
 
             </div>
 
-            <div className="goldPrice flex flex-row justify-between w-full gap-5 px-[12%]">
+
+                        {/* Iran Gold Price */}
+            <div className="goldPrice flex flex-row justify-between w-full gap-5 px-[12%] mt-20">
                 <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
 
                     <div className="boxHeader w-full h-13 bg-blue-200 rounded-t-xl relative">
-                        <img src={Gold} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-[1px] shadow-md " />
+                        <img src={Gold} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
                     </div>
-                    <p className="">قیمت سکه امامی : ۱۵۰۰۰ تومان</p>
+                    <p className=" text-center mt-10">قیمت سکه امامی : <span className="text-red-600 font-bold">۱۵۰۰۰</span> تومان</p>
 
                 </div>
-                <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500"></div>
-                <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500"></div>
-                <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500"></div>
+                <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
+
+                    <div className="boxHeader w-full h-13 bg-blue-200 rounded-t-xl relative">
+                        <img src={Gold} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
+                    </div>
+                    <p className=" text-center mt-10">قیمت نیم امامی : <span className="text-red-600 font-bold">۱۵۰۰۰</span> تومان</p>
+
+                </div>
+                <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
+
+                    <div className="boxHeader w-full h-13 bg-blue-200 rounded-t-xl relative">
+                        <img src={Gold} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
+                    </div>
+                    <p className=" text-center mt-10">قیمت ربع سکه  : <span className="text-red-600 font-bold">۱۵۰۰۰</span> تومان</p>
+
+                </div>
+                <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
+
+                    <div className="boxHeader w-full h-13 bg-blue-200 rounded-t-xl relative">
+                        <img src={Gold} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
+                    </div>
+                    <p className=" text-center mt-10">قیمت طلا ۱۸ عیار  : <span className="text-red-600 font-bold">۱۵۰۰۰</span> تومان</p>
+
+                </div>
+
+            </div>
+
+
+
+
+                        {/* Crypto */}
+            <div className="goldPrice flex flex-row-reverse justify-between w-full gap-5 px-[12%] mt-20">
+                <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
+
+                    <div className="boxHeader w-full h-13 bg-blue-300 rounded-t-xl relative">
+                        <img src={BTC} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
+                    </div>
+                    <p className=" text-center mt-10">قیمت بیت کوین : <span className="text-red-600 font-bold">۱۵۰۰۰</span> تومان</p>
+
+                </div>
+                <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
+
+                    <div className="boxHeader w-full h-13 bg-blue-300 rounded-t-xl relative">
+                        <img src={USDT} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
+                    </div>
+                    <p className=" text-center mt-10">قیمت تتر : <span className="text-red-600 font-bold">۱۵۰۰۰</span> تومان</p>
+
+                </div>
+                <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
+
+                    <div className="boxHeader w-full h-13 bg-blue-300 rounded-t-xl relative">
+                        <img src={ETH} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
+                    </div>
+                    <p className=" text-center mt-10">قیمت اتریوم  : <span className="text-red-600 font-bold">۱۵۰۰۰</span> تومان</p>
+
+                </div>
+                <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
+
+                    <div className="boxHeader w-full h-13 bg-blue-300 rounded-t-xl relative">
+                        <img src={TON} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
+                    </div>
+                    <p className=" text-center mt-10">قیمت تون <span className="text-red-600 font-bold">۱۵۰۰۰</span> تومان</p>
+
+                </div>
 
             </div>
 
