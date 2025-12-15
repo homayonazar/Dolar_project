@@ -4,7 +4,7 @@ import Gold from "../assets/Gold.jpg";
 import BTC from "../assets/btc.svg";
 import USDT from "../assets/usdt.svg";
 import ETH from "../assets/eth.svg";
-import TON from "../assets/ton.svg";
+import TRX from "../assets/trx.png";
 
 
 export default function Home() {
@@ -23,14 +23,32 @@ export default function Home() {
 
                 console.log("API Response:", data);
 
-                const formatted = data.currency.map(item => ({
+                const formattedGold = data.gold.map(item => ({
                     name: item.name,
                     price: Number(item.price).toLocaleString("fa-IR"),
                     change: Number(item.change_value).toLocaleString("fa-IR"),
                     time: item.time,
                 }));
 
-                setRows(formatted);
+                const formattedCurrency = data.currency.map(item => ({
+                    name: item.name,
+                    price: Number(item.price).toLocaleString("fa-IR"),
+                    change: Number(item.change_value).toLocaleString("fa-IR"),
+                    time: item.time,
+                }));
+
+                const formattedCrypto = data.cryptocurrency.map(item => ({
+                    name: item.name,
+                    price: Number(item.price).toLocaleString("fa-IR"),
+                    change: Number(item.change_percent).toLocaleString("fa-IR"),
+                    time: item.time,
+                }));
+
+                setRows([
+                    ...formattedGold,
+                    ...formattedCurrency,
+                    ...formattedCrypto
+                ]);
 
             } catch (error) {
                 console.error("API Error:", error);
@@ -46,6 +64,15 @@ export default function Home() {
     const rightTable = rows.slice(0, mid);
     const leftTable = rows.slice(mid);
 
+
+
+    const getPrice = (name) => {
+        if (!Array.isArray(rows)) return "—";
+        const item = rows.find(row => row?.name === name);
+        return item?.price ?? "—";
+    };
+
+    
     return (
         <div className="bg-gray-100 min-h-screen pt-5 flex flex-col items-center">
             {/* header */}
@@ -122,14 +149,14 @@ export default function Home() {
             </div>
 
 
-                        {/* Iran Gold Price */}
+            {/* Iran Gold Price */}
             <div className="goldPrice flex flex-row justify-between w-full gap-5 px-[12%] mt-20">
                 <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
 
                     <div className="boxHeader w-full h-13 bg-blue-200 rounded-t-xl relative">
                         <img src={Gold} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
                     </div>
-                    <p className=" text-center mt-10">قیمت سکه امامی : <span className="text-red-600 font-bold">۱۵۰۰۰</span> تومان</p>
+                    <p className=" text-center mt-10">قیمت سکه امامی : <span className="text-red-600 font-bold">{getPrice("سکه امامی")}</span> تومان</p>
 
                 </div>
                 <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
@@ -137,7 +164,7 @@ export default function Home() {
                     <div className="boxHeader w-full h-13 bg-blue-200 rounded-t-xl relative">
                         <img src={Gold} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
                     </div>
-                    <p className=" text-center mt-10">قیمت نیم امامی : <span className="text-red-600 font-bold">۱۵۰۰۰</span> تومان</p>
+                    <p className=" text-center mt-10">قیمت نیم امامی : <span className="text-red-600 font-bold">{getPrice("نیم سکه")}</span> تومان</p>
 
                 </div>
                 <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
@@ -145,7 +172,7 @@ export default function Home() {
                     <div className="boxHeader w-full h-13 bg-blue-200 rounded-t-xl relative">
                         <img src={Gold} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
                     </div>
-                    <p className=" text-center mt-10">قیمت ربع سکه  : <span className="text-red-600 font-bold">۱۵۰۰۰</span> تومان</p>
+                    <p className=" text-center mt-10">قیمت ربع سکه  : <span className="text-red-600 font-bold">{getPrice("ربع سکه")}</span> تومان</p>
 
                 </div>
                 <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
@@ -153,7 +180,7 @@ export default function Home() {
                     <div className="boxHeader w-full h-13 bg-blue-200 rounded-t-xl relative">
                         <img src={Gold} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
                     </div>
-                    <p className=" text-center mt-10">قیمت طلا ۱۸ عیار  : <span className="text-red-600 font-bold">۱۵۰۰۰</span> تومان</p>
+                    <p className=" text-center mt-10">قیمت طلا ۱۸ عیار  : <span className="text-red-600 font-bold">{getPrice("طلای 18 عیار")}</span> تومان</p>
 
                 </div>
 
@@ -162,14 +189,14 @@ export default function Home() {
 
 
 
-                        {/* Crypto */}
+            {/* Crypto */}
             <div className="goldPrice flex flex-row-reverse justify-between w-full gap-5 px-[12%] mt-20">
                 <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
 
                     <div className="boxHeader w-full h-13 bg-blue-300 rounded-t-xl relative">
                         <img src={BTC} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
                     </div>
-                    <p className=" text-center mt-10">قیمت بیت کوین : <span className="text-red-600 font-bold">۱۵۰۰۰</span> تومان</p>
+                    <p className=" text-center mt-10">قیمت بیت کوین : <span className="text-red-600 font-bold">{getPrice("بیت‌کوین")}</span> تومان</p>
 
                 </div>
                 <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
@@ -177,7 +204,7 @@ export default function Home() {
                     <div className="boxHeader w-full h-13 bg-blue-300 rounded-t-xl relative">
                         <img src={USDT} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
                     </div>
-                    <p className=" text-center mt-10">قیمت تتر : <span className="text-red-600 font-bold">۱۵۰۰۰</span> تومان</p>
+                    <p className=" text-center mt-10">قیمت تتر : <span className="text-red-600 font-bold">{getPrice("دلار تتر")}</span> تومان</p>
 
                 </div>
                 <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
@@ -185,15 +212,15 @@ export default function Home() {
                     <div className="boxHeader w-full h-13 bg-blue-300 rounded-t-xl relative">
                         <img src={ETH} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
                     </div>
-                    <p className=" text-center mt-10">قیمت اتریوم  : <span className="text-red-600 font-bold">۱۵۰۰۰</span> تومان</p>
+                    <p className=" text-center mt-10">قیمت اتریوم  : <span className="text-red-600 font-bold">{getPrice("اتریوم")}</span> تومان</p>
 
                 </div>
                 <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
 
                     <div className="boxHeader w-full h-13 bg-blue-300 rounded-t-xl relative">
-                        <img src={TON} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
+                        <img src={TRX} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white shadow-md " />
                     </div>
-                    <p className=" text-center mt-10">قیمت تون <span className="text-red-600 font-bold">۱۵۰۰۰</span> تومان</p>
+                    <p className=" text-center mt-10">قیمت ترون :  <span className="text-red-600 font-bold">{getPrice("ترون")}</span> تومان</p>
 
                 </div>
 
