@@ -2,6 +2,21 @@
 @import "tailwindcss";
 @import '@fortawesome/fontawesome-free/css/all.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss/utilities";
+
+
+@font-face {
+  font-family: "AC";
+  src: url("./assets/fonts/Ac.ttf") format("ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "VAZIR";
+  src: url("./assets/fonts/Vazirmatn-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+}
+
 
 
 body {
