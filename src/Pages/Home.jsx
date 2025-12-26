@@ -72,7 +72,7 @@ export default function Home() {
         return item?.price ?? "—";
     };
 
-    
+
     return (
         <div className="bg-gray-100 min-h-screen pt-5 flex flex-col items-center">
             {/* header */}
@@ -95,6 +95,24 @@ export default function Home() {
 
             {/* main Section */}
             <div className="mainSection mt-10  w-[75%] rounded-2xl">
+
+                <div className="glancePrice mt-10 mb-10 flex flex-row-reverse justify-between gap-10">
+                    <div className="box1 bg-gray-100 w-1/4 h-15 rounded-2xl border font-['Tahoma'] border-gray-300 flex justify-center items-center">
+                        <p>دلار : <span>{getPrice("دلار")}</span></p>
+                    </div>
+                    <div className="box1 bg-gray-100 w-1/4 h-15 rounded-2xl border font-['Tahoma']  border-gray-300 flex justify-center items-center">
+                        <p>لیر : <span>{getPrice("لیر ترکیه")}</span></p>
+                    </div>
+                    <div className="box1 bg-gray-100 w-1/4 h-15 rounded-2xl border font-['Tahoma']  border-gray-300 flex justify-center items-center">
+                        <p>درهم : <span>{getPrice("درهم امارات")}</span></p>
+                    </div>
+                    <div className="box1 bg-gray-100 w-1/4 h-15 rounded-2xl border font-['Tahoma']  border-gray-300 flex justify-center items-center">
+                        <p>بیت کوین : <span>{getPrice("بیت‌کوین")}</span></p>
+                    </div>
+                </div>
+
+
+
 
                 <div className="title">
                     <p className="text-center text-2xl  p-5"> قیمت های لحظه ای طلا و ارز</p>

@@ -1,17 +1,19 @@
-# React + Vite
+# 💰 Live Gold & Currency Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🇮🇷 توضیح پروژه
+یک وب‌اپلیکیشن Front-End ساخته‌شده با **React** و **Tailwind CSS** برای نمایش **قیمت لحظه‌ای طلا، ارز و رمزارزها**.  
+داده‌ها به‌صورت آنلاین از API دریافت شده و در یک رابط کاربری ساده و واکنش‌گرا نمایش داده می‌شوند.
 
-Currently, two official plugins are available:
+**Tech Stack:** React, JavaScript, Tailwind CSS, REST API
+-
+ **این پروژه در حال بروزرسانی دوره‌ای می‌باشد.**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🇺🇸 Project Description
+A front-end web application built with **React** and **Tailwind CSS** to display **real-time prices of gold, currencies, and cryptocurrencies**.  
+Data is fetched live from an external API and shown in a clean, responsive UI.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# Dolar_project
+**Tech Stack:** React, JavaScript, Tailwind CSS, REST API
+-
+ **This project is under periodic updates.**
