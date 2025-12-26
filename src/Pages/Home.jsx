@@ -81,9 +81,9 @@ export default function Home() {
 
                     <nav className="flex flex-row-reverse gap-6 list-none w-5/6 justify-start ps-30">
                         <li className="relative cursor-pointer hover:text-green-700 font-['Tahoma']">خانه</li>
-                        <li className="relative cursor-pointer hover:text-green-700 font-['Tahoma']">قیمت ارز</li>
-                        <li className="relative cursor-pointer hover:text-green-700 font-['Tahoma']">درباره ما</li>
-                        <li className="relative cursor-pointer hover:text-green-700 font-['Tahoma']">تماس با ما</li>
+                        {/* <li className="relative cursor-pointer hover:text-green-700 font-['Tahoma']">قیمت ارز</li> */}
+                        {/* <li className="relative cursor-pointer hover:text-green-700 font-['Tahoma']">درباره ما</li> */}
+                        {/* <li className="relative cursor-pointer hover:text-green-700 font-['Tahoma']">تماس با ما</li> */}
                     </nav>
 
                     <div className="logo w-1/6 flex items-center justify-end py-2 pr-6">
