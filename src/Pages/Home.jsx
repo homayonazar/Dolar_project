@@ -81,9 +81,9 @@ export default function Home() {
 
                     <nav className="flex flex-row-reverse gap-6 list-none w-5/6 justify-start ps-30">
                         <li className="relative cursor-pointer hover:text-green-700 font-['Tahoma']">خانه</li>
-                        <li className="relative cursor-pointer hover:text-green-700 font-['Tahoma']">قیمت ارز</li>
-                        <li className="relative cursor-pointer hover:text-green-700 font-['Tahoma']">درباره ما</li>
-                        <li className="relative cursor-pointer hover:text-green-700 font-['Tahoma']">تماس با ما</li>
+                        {/* <li className="relative cursor-pointer hover:text-green-700 font-['Tahoma']">قیمت ارز</li> */}
+                        {/* <li className="relative cursor-pointer hover:text-green-700 font-['Tahoma']">درباره ما</li> */}
+                        {/* <li className="relative cursor-pointer hover:text-green-700 font-['Tahoma']">تماس با ما</li> */}
                     </nav>
 
                     <div className="logo w-1/6 flex items-center justify-end py-2 pr-6">
@@ -96,18 +96,34 @@ export default function Home() {
             {/* main Section */}
             <div className="mainSection mt-10  w-[75%] rounded-2xl">
 
-                <div className="glancePrice mt-10 mb-10 flex flex-row-reverse justify-between gap-10">
-                    <div className="box1 bg-gray-100 w-1/4 h-15 rounded-2xl border font-['Tahoma'] border-gray-300 flex justify-center items-center">
-                        <p>دلار : <span>{getPrice("دلار")}</span></p>
+                <div dir="rtl" className="glancePrice mt-10 mb-10 flex flex-wrap w-full gap-6 px-4 sm:px-8 lg:px-[12%] justify-between">
+
+                    <div className="box1 basis-full sm:basis-[49%] lg:basis-[22%] h-16 bg-yellow-50 from-orange-50 to-yellow-50
+                        rounded-2xl border border-orange-200 shadow-sm flex items-center justify-between px-5
+                        hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <span className="text-orange-600 text-sm font-semibold"> بیت‌کوین </span>
+                        <span className="text-lg font-bold text-orange-700 whitespace-nowrap">{getPrice("بیت‌کوین")}</span>
                     </div>
-                    <div className="box1 bg-gray-100 w-1/4 h-15 rounded-2xl border font-['Tahoma']  border-gray-300 flex justify-center items-center">
-                        <p>لیر : <span>{getPrice("لیر ترکیه")}</span></p>
+
+                    <div className="box1 basis-full sm:basis-[49%] lg:basis-[22%] h-16 bg-white rounded-2xl
+                        border border-gray-200 shadow-sm flex items-center justify-between px-5
+                        hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <span className="text-gray-500 text-sm font-medium"> دلار</span>
+                        <span className="text-lg font-bold text-gray-800 whitespace-nowrap">{getPrice("دلار")}</span>
                     </div>
-                    <div className="box1 bg-gray-100 w-1/4 h-15 rounded-2xl border font-['Tahoma']  border-gray-300 flex justify-center items-center">
-                        <p>درهم : <span>{getPrice("درهم امارات")}</span></p>
+
+                    <div className="box1 basis-full sm:basis-[49%] lg:basis-[22%] h-16 bg-white rounded-2xl
+                        border border-gray-200 shadow-sm flex items-center justify-between px-5
+                        hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <span className="text-gray-500 text-sm font-medium"> لیر ترکیه</span>
+                        <span className="text-lg font-bold text-gray-800 whitespace-nowrap">{getPrice("لیر ترکیه")}</span>
                     </div>
-                    <div className="box1 bg-gray-100 w-1/4 h-15 rounded-2xl border font-['Tahoma']  border-gray-300 flex justify-center items-center">
-                        <p>بیت کوین : <span>{getPrice("بیت‌کوین")}</span></p>
+
+                    <div className="box1 basis-full sm:basis-[49%] lg:basis-[22%] h-16 bg-white rounded-2xl
+                        border border-gray-200 shadow-sm flex items-center justify-between px-5
+                        hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <span className="text-gray-500 text-sm font-medium"> درهم امارات </span>
+                        <span className="text-lg font-bold text-gray-800 whitespace-nowrap">{getPrice("درهم امارات")}</span>
                     </div>
                 </div>
 
@@ -118,8 +134,8 @@ export default function Home() {
                     <p className="text-center text-2xl  p-5"> قیمت های لحظه ای طلا و ارز</p>
                 </div>
 
-                <div className="tables flex flex-row">
-                    <div className="tableLeft w-1/2 bg-amber-50 m-5 rounded-2xl">
+                <div className="tables flex flex-col lg:flex-row ">
+                    <div className="tableLeft w-full  bg-amber-50 m-5 rounded-2xl">
 
                         <div className="firstRow flex flex-row-reverse justify-between">
                             <p className="border-s border-white bg-blue-700 text-white h-10 w-full text-center pt-1 rounded-tr-2xl">ارز</p>
@@ -141,7 +157,7 @@ export default function Home() {
 
                     </div>
 
-                    <div className="tableRight w-1/2 bg-amber-50 m-5 rounded-2xl">
+                    <div className="tableRight w-full  bg-amber-50 m-5 rounded-2xl">
                         <div className="firstRow flex flex-row-reverse justify-between">
                             <p className="border-s border-white bg-blue-700 text-white h-10 w-full text-center pt-1 rounded-tr-2xl">ارز</p>
                             <p className="border-s border-white bg-blue-700 text-white h-10 w-full text-center pt-1">قیمت</p>
@@ -168,8 +184,8 @@ export default function Home() {
 
 
             {/* Iran Gold Price */}
-            <div className="goldPrice flex flex-row justify-between w-full gap-5 px-[12%] mt-20">
-                <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
+            <div className="goldPrice flex flex-wrap w-full gap-5 px-4 sm:px-8 lg:px-[12%] mt-20 justify-center">
+                <div className="box1 w-full sm:w-[48%] lg:w-[23%] h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
 
                     <div className="boxHeader w-full h-13 bg-blue-200 rounded-t-xl relative">
                         <img src={Gold} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
@@ -177,7 +193,7 @@ export default function Home() {
                     <p className=" text-center mt-10">قیمت سکه امامی : <span className="text-red-600 font-bold">{getPrice("سکه امامی")}</span> تومان</p>
 
                 </div>
-                <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
+                <div className="box1 w-full sm:w-[48%] lg:w-[23%] h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
 
                     <div className="boxHeader w-full h-13 bg-blue-200 rounded-t-xl relative">
                         <img src={Gold} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
@@ -185,7 +201,7 @@ export default function Home() {
                     <p className=" text-center mt-10">قیمت نیم امامی : <span className="text-red-600 font-bold">{getPrice("نیم سکه")}</span> تومان</p>
 
                 </div>
-                <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
+                <div className="box1 w-full sm:w-[48%] lg:w-[23%] h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
 
                     <div className="boxHeader w-full h-13 bg-blue-200 rounded-t-xl relative">
                         <img src={Gold} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
@@ -193,7 +209,7 @@ export default function Home() {
                     <p className=" text-center mt-10">قیمت ربع سکه  : <span className="text-red-600 font-bold">{getPrice("ربع سکه")}</span> تومان</p>
 
                 </div>
-                <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
+                <div className="box1 w-full sm:w-[48%] lg:w-[23%] h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
 
                     <div className="boxHeader w-full h-13 bg-blue-200 rounded-t-xl relative">
                         <img src={Gold} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
@@ -208,8 +224,8 @@ export default function Home() {
 
 
             {/* Crypto */}
-            <div className="goldPrice flex flex-row-reverse justify-between w-full gap-5 px-[12%] mt-20">
-                <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
+            <div className="goldPrice flex flex-wrap w-full gap-5 px-4 sm:px-8 lg:px-[12%] mt-20 justify-center">
+                <div className="box1 w-full sm:w-[48%] lg:w-[23%] h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
 
                     <div className="boxHeader w-full h-13 bg-blue-300 rounded-t-xl relative">
                         <img src={BTC} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
@@ -217,7 +233,7 @@ export default function Home() {
                     <p className=" text-center mt-10">قیمت بیت کوین : <span className="text-red-600 font-bold">{getPrice("بیت‌کوین")}</span> تومان</p>
 
                 </div>
-                <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
+                <div className="box1 w-full sm:w-[48%] lg:w-[23%] h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
 
                     <div className="boxHeader w-full h-13 bg-blue-300 rounded-t-xl relative">
                         <img src={USDT} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
@@ -225,7 +241,7 @@ export default function Home() {
                     <p className=" text-center mt-10">قیمت تتر : <span className="text-red-600 font-bold">{getPrice("دلار تتر")}</span> تومان</p>
 
                 </div>
-                <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
+                <div className="box1 w-full sm:w-[48%] lg:w-[23%] h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
 
                     <div className="boxHeader w-full h-13 bg-blue-300 rounded-t-xl relative">
                         <img src={ETH} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white p-px shadow-md " />
@@ -233,7 +249,7 @@ export default function Home() {
                     <p className=" text-center mt-10">قیمت اتریوم  : <span className="text-red-600 font-bold">{getPrice("اتریوم")}</span> تومان</p>
 
                 </div>
-                <div className="box1 w-1/4 h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
+                <div className="box1 w-full sm:w-[48%] lg:w-[23%] h-40 bg-gray-100 rounded-xl border border-gray-500 relative">
 
                     <div className="boxHeader w-full h-13 bg-blue-300 rounded-t-xl relative">
                         <img src={TRX} alt="Gold Photo" className="absolute left-1/2 top-12 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white shadow-md " />
